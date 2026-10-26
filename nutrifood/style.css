@@ -1,0 +1,612 @@
+/* Configuración general */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --verde-claro: #c4ffb2;
+    --fondo: #f0f8ec;
+    --tarjeta: #d0e1c4;
+    --verde-oscuro: #174f24;
+    --texto: #18251a;
+    --borde: #a9b7a3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: 'Inder', 'Nunito', Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+/* Encabezado */
+.header {
+    min-height: 66px;
+    padding: 12px 5%;
+    background: var(--verde-claro);
+    border-bottom: 1px solid var(--borde);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo-mini {
+    display: flex;
+    align-items: center;
+}
+
+.logo-mini img {
+    display: block;
+    width: 48px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 3vw, 38px);
+    flex-wrap: wrap;
+}
+
+.nav a {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 6px 0;
+}
+
+.nav a:hover,
+.nav a.activo {
+    border-color: var(--verde-oscuro);
+}
+
+.login-enlace {
+    background: var(--tarjeta);
+    border-radius: 24px;
+    padding: 10px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.usuario-enlace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.usuario-enlace img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+/* Banner principal */
+.hero {
+    min-height: 235px;
+    padding: 36px 6%;
+    border-bottom: 1px solid var(--borde);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.hero-texto {
+    flex: 1;
+    min-width: 0;
+}
+
+.hero h1 {
+    color: var(--verde-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    margin: 0 0 8px;
+}
+
+.hero p {
+    margin: 0 0 20px;
+}
+
+.hero-ilustracion {
+    flex: 0 1 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-ilustracion img {
+    display: block;
+    width: 100%;
+    max-width: 230px;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+/* Buscador */
+.buscador {
+    display: flex;
+    max-width: 540px;
+    gap: 8px;
+}
+
+.buscador input {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid var(--tarjeta);
+    border-radius: 12px;
+    background: white;
+    font: inherit;
+}
+
+.buscador button {
+    border: 0;
+    background: var(--tarjeta);
+    color: var(--texto);
+    border-radius: 22px;
+    padding: 11px 20px;
+    cursor: pointer;
+    font: inherit;
+}
+
+.buscador button:hover {
+    background: #bed5b0;
+}
+
+/* Secciones generales */
+.seccion {
+    padding: 28px 6% 36px;
+    border-bottom: 1px solid var(--borde);
+}
+
+.seccion h2 {
+    color: var(--verde-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.6rem;
+    margin: 0 0 24px;
+}
+
+/* Categorías */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 130px));
+    justify-content: center;
+    gap: 14px;
+}
+
+.categoria-card {
+    min-height: 105px;
+    padding: 14px 8px;
+    background: var(--tarjeta);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    transition: transform 0.15s ease;
+}
+
+.categoria-card:hover {
+    transform: translateY(-3px);
+}
+
+.categoria-nombre {
+    display: block;
+}
+
+.categoria-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 28px;
+}
+
+/* Listado de alimentos */
+.alimentos-seccion {
+    padding-top: 36px;
+    padding-bottom: 30px;
+}
+
+.titulo-alimentos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.titulo-alimentos a {
+    margin-bottom: 24px;
+    color: var(--verde-oscuro);
+}
+
+.alimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 210px));
+    justify-content: center;
+    gap: 20px;
+}
+
+.alimento-card {
+    background: var(--tarjeta);
+    border-radius: 16px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alimento-imagen {
+    width: 100%;
+    height: 125px;
+    padding: 8px;
+    border: 5px solid white;
+    border-radius: 12px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alimento-imagen img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.alimento-card h3 {
+    width: 100%;
+    margin: 12px 0 8px;
+    color: var(--verde-oscuro);
+    font-size: 1rem;
+}
+
+.descripcion-corta {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0 0 12px;
+}
+
+.etiqueta {
+    display: inline-block;
+    background: #eef7e8;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.alimento-card .nivel {
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.detalle-enlace {
+    display: inline-block;
+    margin-top: auto;
+    padding: 8px 0;
+    color: var(--verde-oscuro);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.sin-resultados {
+    text-align: center;
+    padding: 24px;
+}
+
+/* Índice de páginas: visual por ahora */
+.paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 34px;
+}
+
+.paginacion a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--tarjeta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.paginacion .pagina-activa {
+    background: #c2d9b6;
+}
+
+.paginacion a:hover {
+    background: #b9d2ac;
+}
+
+/* Pie de página */
+.footer {
+    padding: 28px 6%;
+    background: var(--verde-claro);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer h2 {
+    margin: 0 0 8px;
+    color: var(--verde-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.footer p {
+    max-width: 260px;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.footer-enlaces {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.footer-enlaces a {
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.footer-enlaces a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: right;
+}
+
+/* Página de detalle: imagen a la izquierda e información a la derecha */
+.detalle-seccion {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 36px 5% 48px;
+}
+
+.detalle-layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.4fr);
+    gap: 48px;
+    align-items: start;
+}
+
+.detalle-producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detalle-titulo {
+    width: 100%;
+    color: var(--verde-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin: 0 0 24px;
+}
+
+.detalle-imagen {
+    width: 100%;
+    max-width: 360px;
+    height: 270px;
+    padding: 16px;
+    margin: 0 auto 18px;
+    background: white;
+    border: 8px solid var(--tarjeta);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalle-imagen img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.detalle-nivel {
+    margin: 0 0 12px;
+}
+
+.detalle-informacion {
+    min-width: 0;
+}
+
+.detalle-bloque {
+    margin-bottom: 30px;
+}
+
+.detalle-bloque h2 {
+    color: var(--verde-oscuro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    margin: 0 0 12px;
+}
+
+.detalle-bloque p {
+    line-height: 1.7;
+    margin-top: 0;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabla-nutricional {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.tabla-nutricional th,
+.tabla-nutricional td {
+    padding: 13px 16px;
+    border: 1px solid var(--borde);
+    text-align: left;
+}
+
+.tabla-nutricional th {
+    background: var(--tarjeta);
+    color: var(--verde-oscuro);
+}
+
+.tabla-nutricional tbody tr:nth-child(even) {
+    background: #f7faf4;
+}
+
+.volver-alimentos {
+    margin-top: 18px;
+}
+
+.volver-alimentos a {
+    color: var(--verde-oscuro);
+    font-weight: bold;
+}
+
+/* Texto accesible para lectores de pantalla */
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Tablets */
+@media (max-width: 850px) {
+    .header {
+        flex-wrap: wrap;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(110px, 150px));
+    }
+
+    .alimentos-grid {
+        grid-template-columns: repeat(2, minmax(140px, 210px));
+    }
+
+    .detalle-layout {
+        grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+        gap: 24px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .hero {
+        padding: 28px 5%;
+    }
+
+    .hero-ilustracion {
+        flex-basis: 100px;
+    }
+
+    .hero-ilustracion img {
+        max-height: 120px;
+    }
+
+    .buscador {
+        flex-direction: column;
+    }
+
+    .nav {
+        gap: 12px;
+        font-size: 0.9rem;
+    }
+
+    .alimentos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .alimento-card {
+        padding: 8px;
+    }
+
+    .alimento-imagen {
+        height: 110px;
+    }
+
+    .paginacion {
+        gap: 8px;
+    }
+
+    .paginacion a {
+        width: 34px;
+        height: 34px;
+    }
+
+    .footer-enlaces {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .copyright {
+        text-align: left;
+    }
+
+    .detalle-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .detalle-producto {
+        max-width: 420px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .detalle-imagen {
+        height: 210px;
+    }
+
+    .tabla-nutricional th,
+    .tabla-nutricional td {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
