@@ -15,5 +15,4 @@ NOTAS:
   solo en esa visita, sin mantener la sesión iniciada ni necesitar borrar cookies. 
 - Si al iniciar sesión, el usuario quiere volver al login, debe acceder através de la url modificando 'index.php' por 'login.php'.
 - Las cuentas se guardan en usuarios.json y las contraseñas se almacenan mediante password_hash.
-- Los botones de Google y Apple son decorativos.
 - La paginación es visual y todavía no cambia de página.
